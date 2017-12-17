@@ -1,16 +1,37 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>让我们一起抢红包吧</title>
+
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        var count = 0;
+        $(document).ready(function(){
+            $("#clickme").click(function(){
+                count++;
+                $("#count").text(count)
+                if (count >= 5)
+                    window.location = "./input.html"
+            });
+    setInterval(function () {
+        $("#clickme").trigger('click')
+        }, 1000);
+    });
+    </script>
+
+
 </head>
 <body>
-    
+    <div position="absolute">
+        <div>
+            <img id="clickme" src = "./付总.jpg" height="400px">
+        </div>
+
+        <div id="hi">
+            <p position="absolute" left="20px">点我抢红包哟, 已点击<span id = "count">0</span>次,加油</p>
+        </div>
+    </div>
 </body>
 </html>
-<script>
-
-
-</script>
